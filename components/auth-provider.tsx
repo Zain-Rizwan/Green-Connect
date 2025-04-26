@@ -79,9 +79,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const login = async (email: string, password: string) => {
     setIsLoading(true)
     try {
-      // For development purposes, always succeed with a mock user
-      // In production, you would use the API call below
-      /*
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
@@ -95,18 +92,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         throw new Error(error.message || "Login failed")
       }
 
-      const userData = await response.json()
-      setUser(userData.user)
-      */
-
-      // Mock successful login
-      const mockUser: User = {
-        id: "user-123",
-        name: "Jane Smith",
-        email: email,
-        role: "ecowarrior",
-      }
-      setUser(mockUser)
+      const data = await response.json()
+      setUser(data.user)
     } catch (error) {
       console.error("Login error:", error)
       throw error
@@ -119,9 +106,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const register = async (userData: RegisterData) => {
     setIsLoading(true)
     try {
-      // For development purposes, always succeed with a mock user
-      // In production, you would use the API call below
-      /*
       const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
@@ -137,16 +121,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const data = await response.json()
       setUser(data.user)
-      */
-
-      // Mock successful registration
-      const mockUser: User = {
-        id: "user-123",
-        name: userData.name,
-        email: userData.email,
-        role: userData.role,
-      }
-      setUser(mockUser)
     } catch (error) {
       console.error("Registration error:", error)
       throw error
