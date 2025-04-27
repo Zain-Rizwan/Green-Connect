@@ -1,5 +1,5 @@
-import clientPromise from '@/lib/mongodb';
 export const dynamic = 'force-dynamic';  // <-- ADD THIS LINE
+import clientPromise from '@/lib/mongodb';
 
 import { NextResponse } from 'next/server';
 
