@@ -17,7 +17,6 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-    
     // Find user by email
     const user = await usersCollection.findOne({ email: email.toLowerCase() });
     
