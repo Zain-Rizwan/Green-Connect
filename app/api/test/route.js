@@ -1,4 +1,9 @@
 import clientPromise from '@/lib/mongodb';
+export const dynamic = 'force-dynamic';  // <-- ADD THIS LINE
+
+import { NextResponse } from 'next/server';
+
+// your other code...
 
 export async function GET() {
   try {
