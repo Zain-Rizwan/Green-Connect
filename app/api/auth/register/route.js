@@ -1,7 +1,7 @@
+export const dynamic = 'force-dynamic';  // <-- ADD THIS LINE
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import bcrypt from 'bcryptjs';
-export const dynamic = 'force-dynamic';  // <-- ADD THIS LINE
 
 export async function POST(request) {
   try {
