@@ -2,22 +2,21 @@
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 
-// Define user type
+// Define the User interface
 export interface User {
-  id: string
-  name: string
-  email: string
-  role: "ecowarrior" | "organization" | "admin"
-  image?: string
+  id: string;
+  name: string;
+  email: string;
+  role: "ecowarrior" | "organization" | "admin";
 }
 
-// Define auth context type
+// Update your AuthContext to use this type
 interface AuthContextType {
-  user: User | null
-  isLoading: boolean
-  login: (email: string, password: string) => Promise<void>
-  register: (userData: RegisterData) => Promise<void>
-  logout: () => Promise<void>
+  user: User | null;
+  isLoading: boolean;
+  login: (email: string, password: string) => Promise<void>;
+  register: (userData: RegisterData) => Promise<void>;
+  logout: () => Promise<void>;
 }
 
 // Register data type

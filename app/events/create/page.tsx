@@ -45,6 +45,10 @@ export default function CreateEventPage() {
     setIsLoading(true)
 
     try {
+      if (!user) {
+        throw new Error("You must be logged in to create an event")
+      }
+      
       const response = await fetch("/api/events", {
         method: "POST",
         headers: {
@@ -57,6 +61,10 @@ export default function CreateEventPage() {
           location,
           type: eventType,
           points: Number.parseInt(points),
+          user: {
+            id: user.id,
+            name: user.name,
+          },
         }),
       })
 
